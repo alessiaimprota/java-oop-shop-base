@@ -11,6 +11,13 @@ public class Prodotto {
     public BigDecimal price;
     public BigDecimal IVA;
 
+    public Prodotto(String name, String description, BigDecimal price, BigDecimal IVA) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.IVA = IVA;
+    }
+
     public String nameAndCode() {
         if (name != null) {
             return code + " " + name;
