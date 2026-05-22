@@ -21,6 +21,20 @@ public class App {
         System.out.println(libro.getPrice());
 
         System.out.println(libro.getPriceIVA());
+
+        Prodotto quaderno = new Prodotto("quaderno matematica", "che schifo la matematica", new BigDecimal(50));
+
+        System.out.println(quaderno.getName());
+        quaderno.setName("quaderno di arte");
+        System.out.println(quaderno.getName());
+        System.out.println(quaderno.getDescription());
+        quaderno.setDescription("arte è più simpatica");
+        System.out.println(quaderno.getDescription());
+        System.out.println(quaderno.getPrice());
+        quaderno.setPrice(new BigDecimal(100));
+        System.out.println(quaderno.getPrice());
+        System.out.println(quaderno.getPriceIVA());
+
     }
 
 }
