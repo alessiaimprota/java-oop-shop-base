@@ -2,20 +2,42 @@ package org.lessons.java.shop;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Random;
+import java.util.random.*;
 
 public class Prodotto {
+    private int code;
+    private String name;
+    private String description;
+    private BigDecimal price;
+    public static final BigDecimal IVA = new BigDecimal("1.22");
 
-    public int code = (int) (Math.random() * 100000);
-    public String name;
-    public String description;
-    public BigDecimal price;
-    public BigDecimal IVA;
-
-    public Prodotto(String name, String description, BigDecimal price, BigDecimal IVA) {
+    public Prodotto(String name, String description, BigDecimal price) {
+        Random rand = new Random();
+        this.code = rand.nextInt(100000);
         this.name = name;
         this.description = description;
         this.price = price;
-        this.IVA = IVA;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        if (!name.isBlank()) {
+            this.name = name;
+        }
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        if (!description.isBlank()) {
+            this.description = description;
+        }
     }
 
     public String nameAndCode() {
@@ -30,13 +52,15 @@ public class Prodotto {
         return this.price;
     }
 
-    public BigDecimal getPriceIVA() {
+    public void setPrice(BigDecimal price) {
         if (price != null) {
-            this.IVA = new BigDecimal(1.22);
-
-            return this.price.multiply(this.IVA).setScale(2, RoundingMode.HALF_UP);
-        } else {
-            return null;
+            this.price = price;
         }
+    }
+
+    public BigDecimal getPriceIVA() {
+
+        return this.price.multiply(IVA).setScale(2, RoundingMode.HALF_UP);
+
     }
 };
