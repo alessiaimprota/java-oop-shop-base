@@ -28,6 +28,7 @@ public class Smartphone extends Prodotto {
         this.GbMemoria = GbMemoria;
     }
 
+    @Override
     public String toString() {
         return super.toString() +
                 "\n Imei: " + this.IMEI +
