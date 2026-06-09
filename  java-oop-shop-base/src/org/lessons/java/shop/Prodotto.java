@@ -20,6 +20,10 @@ public class Prodotto {
         this.price = price;
     }
 
+    public int getCode() {
+        return this.code;
+    }
+
     public String getName() {
         return this.name;
     }
@@ -62,5 +66,12 @@ public class Prodotto {
 
         return this.price.multiply(IVA).setScale(2, RoundingMode.HALF_UP);
 
+    }
+
+    public String toString() {
+        return "Codice: " + this.code +
+                "\nNome: " + this.name +
+                "\nDescrizione: " + this.description +
+                "\nPrezzo: " + this.price + "EUR";
     }
 };
