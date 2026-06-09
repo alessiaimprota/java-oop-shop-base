@@ -72,6 +72,7 @@ public class Prodotto {
         return "Codice: " + this.code +
                 "\nNome: " + this.name +
                 "\nDescrizione: " + this.description +
-                "\nPrezzo: " + this.price + "EUR";
+                "\nPrezzo: " + this.price + "EUR" +
+                "\nPrezzo con IVA: " + getPriceIVA() + "EUR";
     }
 };
